@@ -10,7 +10,7 @@
 /* Layout: breeder's litter announcement. Sticky nav, hero with litter card, status timeline,
    what's included, parents, pickup points, process, inquiry form. */
 :root {
-  --bg: #f4f2ee;
+  --bg: #efe3cf;
   --surface: #ffffff;
   --fg: #231a14;
   --muted: #6b5d52;
@@ -24,20 +24,7 @@
   --f-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
   --f-body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
   --f-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #17110d; --surface: #211812; --fg: #f1e9e1; --muted: #b5a698; --line: #3a2d24;
-    --choc: #8a5a3f; --choc-fg: #fbf4ec; --ribbon: #d9a441; --ribbon-soft: #3a2f14;
-    --ok: #7fcf93; --ok-bg: #1f3a27;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #17110d; --surface: #211812; --fg: #f1e9e1; --muted: #b5a698; --line: #3a2d24;
-  --choc: #8a5a3f; --choc-fg: #fbf4ec; --ribbon: #d9a441; --ribbon-soft: #3a2f14;
-  --ok: #7fcf93; --ok-bg: #1f3a27;
-  color-scheme: dark;
+  color-scheme: light;
 }
 * { box-sizing: border-box; }
 body {
