@@ -121,6 +121,19 @@ section.block { padding-block: 52px; border-top: 1px solid var(--line); }
 .steps h3 { font-size: 1.05rem; margin-bottom: 6px; }
 .steps p { font-size: 0.92rem; color: var(--muted); }
 
+.puppies { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin-bottom: 24px; align-items: start; }
+.puppies:empty { display: none; }
+.puppy { padding: 0; overflow: hidden; }
+.puppy .photo { aspect-ratio: 4 / 3; background: var(--bg); border-bottom: 1px solid var(--line); }
+.puppy .photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.puppy .body { padding: 14px 16px; }
+.puppy .row { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.puppy h3 { font-size: 1.15rem; margin: 0; }
+.puppy p { color: var(--muted); font-size: 0.9rem; margin-top: 4px; }
+.puppy .pill.reserved { background: var(--ribbon-soft); color: var(--fg); }
+.puppy .pill.sold { background: var(--bg); color: var(--muted); }
+.puppy.sold .photo img { opacity: 0.55; }
+
 .meet { display: grid; gap: 12px; }
 .meet .spot { display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: baseline; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
 .meet .spot:last-child { border-bottom: 0; padding-bottom: 0; }
@@ -215,8 +228,9 @@ footer .wrap { display: grid; gap: 8px; }
   <section class="block" id="litter">
     <div class="section-head">
       <h2>The litter</h2>
-      <p>Puppy photos and availability go up here soon. Interested families hear first.</p>
+      <p id="litter-note">Puppy photos and availability go up here soon. Interested families hear first.</p>
     </div>
+    <div class="puppies" id="puppies"></div>
     <div class="litter-top">
 <figure class="litter-photo"><img src="images/litter.jpg" alt="Newborn chocolate Labrador puppies sleeping side by side" width="720" height="960"><figcaption>The litter, born Nov. 3, 2026.</figcaption></figure>
 <ol class="timeline">
@@ -340,6 +354,26 @@ footer .wrap { display: grid; gap: 8px; }
   </div>
 </footer>
 
+<script>
+// The puppies come from puppies.json; see README.md for the fields.
+(function () {
+  var list = document.getElementById("puppies");
+  var labels = { available: "Available", reserved: "Reserved", sold: "Sold" };
+  function esc(v) { return String(v == null ? "" : v).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  fetch("puppies.json", { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (d) {
+    var pups = (d && d.puppies) || [];
+    if (!pups.length) return;
+    document.getElementById("litter-note").textContent = "Each puppy with its sex and status. Send an inquiry to ask about one.";
+    list.innerHTML = pups.map(function (p) {
+      var st = labels[p.status] ? p.status : "available";
+      return '<article class="card puppy ' + st + '">' +
+        (p.photo ? '<div class="photo"><img src="' + esc(p.photo) + '" alt="' + esc(p.name) + ', chocolate Labrador puppy" loading="lazy"></div>' : "") +
+        '<div class="body"><div class="row"><h3>' + esc(p.name) + '</h3><span class="pill ' + st + '">' + labels[st] + '</span></div>' +
+        '<p>' + esc(p.sex) + (p.note ? " · " + esc(p.note) : "") + '</p></div></article>';
+    }).join("");
+  }).catch(function () {});
+})();
+</script>
 <script>
 (function () {
   // Inquiries go to Katy's inbox through Web3Forms (web3forms.com); the key is tied to her email address.
