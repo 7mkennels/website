@@ -1,6 +1,17 @@
 # 7mkennels.com
 
-The site is `public/index.html`. Photos go in `public/images/`.
+The site is in `public/`, one page per menu tab:
+
+| Page | File |
+|---|---|
+| Home | `public/index.html` |
+| The litter | `public/litter/index.html` |
+| Bear and Nia | `public/parents/index.html` |
+| Pickup | `public/pickup/index.html` |
+| How it works | `public/how-it-works/index.html` |
+| Inquire | `public/inquire/index.html` |
+
+Every page shares `public/styles.css`. The menu and footer are repeated in each page, so change them in all six. Photos go in `public/images/`. The price appears on the home page and the litter page.
 
 ## The puppy list
 

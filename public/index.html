@@ -4,196 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="7mkennels: AKC registered chocolate Labrador puppies from Bear and Nia. Local pickup in Georgia.">
-<title>7mkennels</title>
+<title>7mkennels · Chocolate Labrador puppies in Georgia</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<style>
-/* Layout: breeder's litter announcement. Sticky nav, hero with litter card, status timeline,
-   what's included, parents, pickup points, process, inquiry form. */
-:root {
-  --bg: #efe3cf;
-  --surface: #ffffff;
-  --fg: #231a14;
-  --muted: #6b5d52;
-  --line: #ddd5ca;
-  --choc: #4a2c1d;
-  --choc-fg: #f8f1ea;
-  --ribbon: #b8841f;
-  --ribbon-soft: #f3e6c4;
-  --ok: #2f7a45;
-  --ok-bg: #dcefe0;
-  --f-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
-  --f-body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --f-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
-  color-scheme: light;
-}
-* { box-sizing: border-box; }
-body {
-  background: var(--bg); color: var(--fg); font-family: var(--f-body); font-size: 16px; line-height: 1.6;
-  padding-left: max(16px, env(safe-area-inset-left, 0px));
-  padding-right: max(16px, env(safe-area-inset-right, 0px));
-  padding-block: 0;
-}
-body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
-.wrap { max-width: 1080px; margin: 0 auto; }
-h1, h2, h3 { font-family: var(--f-display); line-height: 1.1; margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
-h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 800; }
-h3 { font-size: 1.2rem; font-weight: 700; }
-p { margin: 0; }
-a { color: inherit; }
-:focus-visible { outline: 3px solid var(--ribbon); outline-offset: 2px; }
-.label { font-family: var(--f-mono); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
-
-.notice { background: var(--ribbon-soft); color: var(--fg); font-size: 0.85rem; padding: 8px 0; border-bottom: 1px solid var(--line); margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px))); padding-inline: max(16px, env(safe-area-inset-left, 0px)); }
-
-nav.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line); margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px))); padding-inline: max(16px, env(safe-area-inset-left, 0px)); }
-nav.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 0; flex-wrap: wrap; }
-.brand { font-family: var(--f-display); font-weight: 800; font-size: 1.15rem; text-decoration: none; display: flex; align-items: center; gap: 10px; }
-.brand-mark { width: 30px; height: 30px; border-radius: 50%; background: var(--choc); color: var(--choc-fg); display: grid; place-items: center; font-size: 0.78rem; }
-nav.top ul { list-style: none; display: flex; gap: 18px; margin: 0; padding: 0; flex-wrap: wrap; font-size: 0.92rem; font-weight: 500; }
-nav.top a { text-decoration: none; color: var(--muted); }
-nav.top a:hover { color: var(--fg); }
-
-.hero { padding-block: 48px 40px; display: grid; grid-template-columns: 1.15fr 1fr; gap: 40px; align-items: end; }
-.hero h1 { font-size: clamp(2.3rem, 6.5vw, 4.4rem); font-weight: 800; }
-.hero h1 em { font-style: normal; color: var(--choc); }
-.hero p.lede { margin-top: 18px; font-size: 1.1rem; color: var(--muted); max-width: 52ch; }
-.cta-row { display: flex; gap: 12px; margin-top: 26px; flex-wrap: wrap; }
-.btn { display: inline-block; font: 600 1rem var(--f-body); padding: 12px 22px; border-radius: 6px; border: 2px solid var(--choc); background: var(--choc); color: var(--choc-fg); text-decoration: none; cursor: pointer; }
-.btn:hover { filter: brightness(1.15); }
-.btn.alt { background: transparent; color: var(--fg); border-color: var(--line); }
-.btn.alt:hover { border-color: var(--fg); filter: none; }
-
-.litter { background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 22px; }
-.litter .label { margin-bottom: 10px; display: block; }
-dl { margin: 0; }
-.litter dl { display: grid; grid-template-columns: auto 1fr; gap: 10px 18px; }
-dt { font-family: var(--f-mono); font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; padding-top: 3px; }
-dd { margin: 0; font-weight: 500; }
-.ribbon { display: inline-block; background: var(--ribbon); color: #1b1405; font-family: var(--f-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; border-radius: 2px; margin-bottom: 14px; font-weight: 500; }
-.pill { font-family: var(--f-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; padding: 3px 10px; border-radius: 999px; background: var(--ok-bg); color: var(--ok); white-space: nowrap; }
-
-section.block { padding-block: 52px; border-top: 1px solid var(--line); }
-.section-head { margin-bottom: 26px; }
-.section-head p { color: var(--muted); max-width: 56ch; margin-top: 8px; }
-
-.timeline { list-style: none; margin: 0 0 24px; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); border-radius: 4px; background: var(--surface); }
-.timeline li { padding: 18px 20px; border-right: 1px solid var(--line); min-width: 0; position: relative; }
-.timeline li:last-child { border-right: 0; }
-.timeline .label { display: block; margin-bottom: 6px; }
-.timeline h3 { font-size: 1.02rem; margin-bottom: 4px; }
-.timeline p { font-size: 0.9rem; color: var(--muted); }
-.timeline li.now { background: var(--ribbon-soft); }
-.timeline li.now .label { color: var(--fg); }
-
-.two { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.card { background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 22px; min-width: 0; }
-.card h3 { margin-bottom: 12px; }
-.card ul { margin: 0; padding-left: 1.1em; display: grid; gap: 8px; }
-.card li::marker { color: var(--ribbon); }
-.price-card .price { font-family: var(--f-mono); font-size: 2.4rem; font-weight: 500; line-height: 1; }
-.price-card .sub { color: var(--muted); font-size: 0.9rem; margin: 6px 0 18px; }
-
-.parent .photo { position: relative; overflow: hidden;  aspect-ratio: 4 / 3; max-width: 100%; display: grid; place-items: center; background: repeating-linear-gradient(135deg, var(--bg) 0 14px, var(--surface) 14px 28px); color: var(--muted); font-family: var(--f-mono); font-size: 0.8rem; border: 1px solid var(--line); border-radius: 2px; margin-bottom: 16px; }
-.parent .photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.parent h3 { font-size: 1.6rem; margin: 6px 0 6px; }
-.parent p { color: var(--muted); font-size: 0.95rem; }
-.parent ul.tests { margin: 12px 0 0; padding-left: 1.1em; display: grid; gap: 4px; font-size: 0.95rem; }
-.parent ul.tests li::marker { color: var(--ribbon); }
-.parent p.reg-name { font-family: var(--f-mono); font-size: 0.82rem; color: var(--fg); margin-bottom: 6px; overflow-wrap: anywhere; }
-
-.steps { list-style: none; counter-reset: s; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); border-radius: 4px; background: var(--surface); }
-.steps li { counter-increment: s; padding: 20px; border-right: 1px solid var(--line); min-width: 0; }
-.steps li:last-child { border-right: 0; }
-.steps li::before { content: "Step " counter(s); font-family: var(--f-mono); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ribbon); display: block; margin-bottom: 8px; }
-.steps h3 { font-size: 1.05rem; margin-bottom: 6px; }
-.steps p { font-size: 0.92rem; color: var(--muted); }
-
-.puppies { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin-bottom: 24px; align-items: start; }
-.puppies:empty { display: none; }
-.puppy { padding: 0; overflow: hidden; }
-.puppy .photo { aspect-ratio: 4 / 3; background: var(--bg); border-bottom: 1px solid var(--line); }
-.puppy .photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.puppy .body { padding: 14px 16px; }
-.puppy .row { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
-.puppy h3 { font-size: 1.15rem; margin: 0; }
-.puppy p { color: var(--muted); font-size: 0.9rem; margin-top: 4px; }
-.puppy .pill.reserved { background: var(--ribbon-soft); color: var(--fg); }
-.puppy .pill.sold { background: var(--bg); color: var(--muted); }
-.puppy.sold .photo img { opacity: 0.55; }
-
-.meet { display: grid; gap: 12px; }
-.meet .spot { display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: baseline; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
-.meet .spot:last-child { border-bottom: 0; padding-bottom: 0; }
-.meet .spot strong { display: block; }
-.meet .spot span.d { color: var(--muted); font-size: 0.92rem; }
-.meet .code { font-family: var(--f-mono); font-size: 0.8rem; background: var(--bg); border: 1px solid var(--line); padding: 3px 8px; border-radius: 3px; }
-
-form { background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px 18px; }
-.field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
-.field.full { grid-column: 1 / -1; }
-label { font-weight: 600; font-size: 0.9rem; }
-input, select, textarea { font: 400 1rem var(--f-body); color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 4px; padding: 10px 12px; width: 100%; min-width: 0; }
-textarea { min-height: 110px; resize: vertical; }
-.hint { font-size: 0.82rem; color: var(--muted); }
-.addr { font-family: var(--f-mono); font-size: 0.88em; user-select: all; overflow-wrap: anywhere; color: var(--fg); }
-code.addr { background: var(--surface); border: 1px solid var(--line); padding: 1px 6px; border-radius: 3px; }
-.result { grid-column: 1 / -1; display: none; border: 1px dashed var(--ribbon); border-radius: 4px; padding: 16px; background: var(--bg); }
-.result.show { display: block; }
-.result pre { white-space: pre-wrap; word-break: break-word; font-family: var(--f-mono); font-size: 0.85rem; margin: 10px 0 12px; }
-
-footer { border-top: 1px solid var(--line); padding-block: 32px 40px; font-size: 0.85rem; color: var(--muted); }
-footer .wrap { display: grid; gap: 8px; }
-
-@media (max-width: 820px) {
-  .hero { grid-template-columns: 1fr; gap: 28px; padding-block: 32px; }
-  .two { grid-template-columns: 1fr; }
-  .timeline, .steps { grid-template-columns: 1fr 1fr; }
-  .timeline li:nth-child(2), .steps li:nth-child(2) { border-right: 0; }
-  .timeline li:nth-child(-n+2), .steps li:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
-  form { grid-template-columns: 1fr; }
-  nav.top ul { gap: 14px; font-size: 0.85rem; }
-}
-@media (max-width: 480px) {
-  .timeline, .steps { grid-template-columns: 1fr; }
-  .timeline li, .steps li { border-right: 0; border-bottom: 1px solid var(--line); }
-  .timeline li:last-child, .steps li:last-child { border-bottom: 0; }
-  .meet .spot { grid-template-columns: 1fr; gap: 4px; }
-}
-@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
-
-.litter-top { display: grid; grid-template-columns: minmax(0, 340px) 1fr; gap: 24px; align-items: start; margin-bottom: 24px; }
-.litter-photo { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
-.litter-photo img { display: block; width: 100%; height: auto; }
-.litter-photo figcaption { padding: 10px 14px; font-size: 0.85rem; color: var(--muted); }
-.litter-top .timeline { grid-template-columns: 1fr; margin: 0; }
-.litter-top .timeline li:nth-child(n) { border-right: 0; border-bottom: 1px solid var(--line); }
-.litter-top .timeline li:last-child { border-bottom: 0; }
-@media (max-width: 700px) { .litter-top { grid-template-columns: 1fr; } .litter-photo { max-width: 420px; } }
-</style>
+<link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 <nav class="top">
   <div class="wrap">
-    <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">7M</span>7mkennels</a>
+    <a class="brand" href="/" aria-current="page"><span class="brand-mark" aria-hidden="true">7M</span>7mkennels</a>
     <ul>
-      <li><a href="#litter">The litter</a></li>
-      <li><a href="#parents">Bear and Nia</a></li>
-      <li><a href="#pickup">Pickup</a></li>
-      <li><a href="#process">How it works</a></li>
-      <li><a href="#inquire">Inquire</a></li>
+      <li><a href="/litter/">The litter</a></li>
+      <li><a href="/parents/">Bear and Nia</a></li>
+      <li><a href="/pickup/">Pickup</a></li>
+      <li><a href="/how-it-works/">How it works</a></li>
+      <li><a href="/inquire/">Inquire</a></li>
     </ul>
   </div>
 </nav>
 
-<main class="wrap" id="top">
+<main class="wrap">
   <header class="hero">
     <div>
       <span class="ribbon">AKC registered</span>
       <h1>Chocolate Labrador puppies from <em>Bear and Nia</em>.</h1>
       <p class="lede">Our litter of 6 was born November 3, 2026, with males and females available. Every puppy is AKC registered, gets its 6-week vaccinations, and sees our vet for a well check. Send an inquiry now and Katy will be in touch about reserving yours.</p>
       <div class="cta-row">
-        <a class="btn" href="#inquire">Join the interest list</a>
-        <a class="btn alt" href="#litter">See what is included</a>
+        <a class="btn" href="/inquire/">Join the interest list</a>
+        <a class="btn alt" href="/litter/">See what is included</a>
       </div>
     </div>
     <aside class="litter" aria-label="Litter details" style="padding:22px">
@@ -204,7 +41,7 @@ footer .wrap { display: grid; gap: 8px; }
         <dt>Breed</dt><dd>Labrador Retriever, chocolate</dd>
         <dt>Sire</dt><dd>Bear<br><span class="label" style="text-transform:none;letter-spacing:0">Bear the Big Brown Bunny Rabbit</span></dd>
         <dt>Dam</dt><dd>Nia<br><span class="label" style="text-transform:none;letter-spacing:0">Nia2020</span></dd>
-        <dt>Price</dt><dd>$1,000</dd>
+        <dt>Price</dt><dd>$1,500</dd>
         <dt>Registration</dt><dd>AKC Full, at sale</dd>
         <dt>Go home</dt><dd>After Jan. 5, 2027</dd>
         <dt>Pickup</dt><dd>Local only, no shipping</dd>
@@ -212,125 +49,13 @@ footer .wrap { display: grid; gap: 8px; }
     </aside>
   </header>
 
-  <section class="block" id="litter">
-    <div class="section-head">
-      <h2>The litter</h2>
-      <p id="litter-note">Puppy photos and availability go up here soon. Interested families hear first.</p>
+  <section class="block" aria-label="More about the litter">
+    <div class="links">
+      <a class="card" href="/litter/"><span class="label">See the puppies</span><h3>The litter</h3><p>Photos, availability, price and what every puppy comes with.</p></a>
+      <a class="card" href="/parents/"><span class="label">Sire and dam</span><h3>Bear and Nia</h3><p>Meet the parents, their registered names and health testing.</p></a>
+      <a class="card" href="/pickup/"><span class="label">Georgia only</span><h3>Pickup</h3><p>Our two meeting points: the Atlanta airport and Lavonia.</p></a>
+      <a class="card" href="/how-it-works/"><span class="label">Four steps</span><h3>How it works</h3><p>From your first inquiry to go-home day.</p></a>
     </div>
-    <div class="puppies" id="puppies"></div>
-    <div class="litter-top">
-<figure class="litter-photo"><img src="images/litter.jpg" alt="Newborn chocolate Labrador puppies sleeping side by side" width="720" height="960"><figcaption>The litter, born Nov. 3, 2026.</figcaption></figure>
-<ol class="timeline">
-      <li class="now"><span class="label">Now</span><h3>Born Nov. 3</h3><p>Six puppies arrived, males and females.</p></li>
-      <li><span class="label">Next</span><h3>Photos and availability</h3><p>Each puppy is posted here with its sex and status.</p></li>
-      <li><span class="label">Then</span><h3>Reserve yours</h3><p>A $500 deposit locks in your puppy.</p></li>
-      <li><span class="label">Finally</span><h3>Go-home day</h3><p>Puppies can go home after Jan. 5, 2027, at one of our two meeting points.</p></li>
-    </ol>
-    </div>
-    <div class="two">
-      <div class="card price-card">
-        <span class="label">Price per puppy</span>
-        <div class="price">$1,000</div>
-        <p class="sub">AKC Full Registration at sale</p>
-        <ul>
-          <li>AKC registered, with Full Registration provided at the time of sale</li>
-          <li>6-week vaccinations for every puppy</li>
-          <li>Well check at our vet before your puppy goes home</li>
-          <li>A $500 deposit locks in your reservation and goes toward the total price</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Good to know</h3>
-        <ul>
-          <li>We do not ship. All puppies go home by local pickup.</li>
-          <li>Questions about pedigree, test results or the sales contract? Ask when you inquire.</li>
-          <li>All inquiries come through this website and are answered by Katy Myers.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" id="parents">
-    <div class="section-head">
-      <h2>Meet the parents</h2>
-      <p>Bear and Nia are the sire and dam of this litter. Ask us for pedigrees when you inquire.</p>
-    </div>
-    <div class="two">
-      <article class="card parent">
-        <div class="photo"><span>Photo of Bear</span><img src="images/bear.jpg" alt="Bear, chocolate Labrador Retriever" onerror="this.remove()"></div>
-        <span class="label">Sire</span>
-        <h3>Bear</h3>
-        <p class="reg-name">AKC registered name: Bear the Big Brown Bunny Rabbit</p>
-        <p>Chocolate Labrador Retriever.</p>
-      </article>
-      <article class="card parent">
-        <div class="photo"><span>Photo of Nia</span><img src="images/nia.jpg" alt="Nia, chocolate Labrador Retriever" onerror="this.remove()"></div>
-        <span class="label">Dam</span>
-        <h3>Nia</h3>
-        <p class="reg-name">AKC registered name: Nia2020</p>
-        <p>Chocolate Labrador Retriever.</p>
-        <ul class="tests">
-          <li>OFA hip and elbow testing completed</li>
-          <li>AKC genetic testing completed</li>
-        </ul>
-      </article>
-    </div>
-  </section>
-
-  <section class="block" id="pickup">
-    <div class="section-head">
-      <h2>Local pickup</h2>
-      <p>We do not ship puppies. We meet you at one of two places in Georgia.</p>
-    </div>
-    <div class="card meet">
-      <div class="spot"><span class="code">ATL</span><div><strong>Atlanta airport</strong><span class="d">Good if you are flying in and want to take your puppy home with you.</span></div></div>
-      <div class="spot"><span class="code">I-85</span><div><strong>Off I-85 in Lavonia, GA</strong><span class="d">Easy to reach from the interstate if you are driving up or down I-85.</span></div></div>
-    </div>
-  </section>
-
-  <section class="block" id="process">
-    <div class="section-head">
-      <h2>How buying a puppy works</h2>
-      <p>The same steps for every family, in the order they happen.</p>
-    </div>
-    <ol class="steps">
-      <li><h3>Inquire</h3><p>Send the form below and tell us about your home and what you want in a dog.</p></li>
-      <li><h3>Talk with Katy</h3><p>We answer your questions and let you know when the puppies arrive.</p></li>
-      <li><h3>Choose and reserve</h3><p>Pick from the available puppies. A $500 deposit locks in your reservation and goes toward the total price.</p></li>
-      <li><h3>Meet and take them home</h3><p>Pick up at the Atlanta airport or in Lavonia, with registration at sale.</p></li>
-    </ol>
-  </section>
-
-  <section class="block" id="inquire">
-    <div class="section-head">
-      <h2>Send an inquiry</h2>
-      <p>Tell us a little about you. Inquiries are answered by Katy Myers. You can also email <code class="addr">Labs7mkennels@yahoo.com</code>.</p>
-    </div>
-    <form id="inq" novalidate>
-      <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required></div>
-      <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
-      <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
-      <div class="field"><label for="f-city">City and state</label><input id="f-city" name="city" autocomplete="address-level2"></div>
-      <div class="field"><label for="f-sex">Preference</label>
-        <select id="f-sex" name="sex"><option>No preference</option><option>Male</option><option>Female</option></select></div>
-      <div class="field"><label for="f-pick">Pickup location</label>
-        <select id="f-pick" name="pick"><option>Either location</option><option>Atlanta airport</option><option>Off I-85 in Lavonia, GA</option></select></div>
-      <div class="field"><label for="f-home">Your home</label>
-        <select id="f-home" name="home"><option>House with fenced yard</option><option>House, no fence</option><option>Apartment or condo</option><option>Farm or acreage</option></select></div>
-      <div class="field"><label for="f-exp">Dog experience</label>
-        <select id="f-exp" name="exp"><option>First dog</option><option>Have owned dogs before</option><option>Currently own a dog</option><option>Experienced with Labradors</option></select></div>
-      <div class="field full"><label for="f-msg">Tell us about your family</label>
-        <textarea id="f-msg" name="msg"></textarea>
-        <span class="hint">Who lives at home, who will be there during the day, and what you want your Lab to do.</span></div>
-      <div class="field full"><button class="btn" type="submit" id="send">Send inquiry</button></div>
-      <div class="result" id="result" aria-live="polite">
-        <strong id="status">Your message</strong>
-        <p class="hint" id="fallback-note" style="margin-top:4px">Copy it and email it to <code class="addr">Labs7mkennels@yahoo.com</code>.</p>
-        <pre id="summary"></pre>
-        <button class="btn alt" type="button" id="copy">Copy message</button>
-        <span class="hint" id="copied" style="margin-left:10px"></span>
-      </div>
-    </form>
   </section>
 </main>
 
@@ -340,81 +65,5 @@ footer .wrap { display: grid; gap: 8px; }
     <div>Independent breeder. Not affiliated with or endorsed by the American Kennel Club. “AKC” is a registered trademark of the American Kennel Club, Inc.</div>
   </div>
 </footer>
-
-<script>
-// The puppies come from puppies.json; see README.md for the fields.
-(function () {
-  var list = document.getElementById("puppies");
-  var labels = { available: "Available", reserved: "Reserved", sold: "Sold" };
-  function esc(v) { return String(v == null ? "" : v).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
-  fetch("puppies.json", { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (d) {
-    var pups = (d && d.puppies) || [];
-    if (!pups.length) return;
-    document.getElementById("litter-note").textContent = "Each puppy with its sex and status. Send an inquiry to ask about one.";
-    list.innerHTML = pups.map(function (p) {
-      var st = labels[p.status] ? p.status : "available";
-      return '<article class="card puppy ' + st + '">' +
-        (p.photo ? '<div class="photo"><img src="' + esc(p.photo) + '" alt="' + esc(p.name) + ', chocolate Labrador puppy" loading="lazy"></div>' : "") +
-        '<div class="body"><div class="row"><h3>' + esc(p.name) + '</h3><span class="pill ' + st + '">' + labels[st] + '</span></div>' +
-        '<p>' + esc(p.sex) + (p.note ? " · " + esc(p.note) : "") + '</p></div></article>';
-    }).join("");
-  }).catch(function () {});
-})();
-</script>
-<script>
-(function () {
-  // Inquiries go to Katy's inbox through Web3Forms (web3forms.com); the key is tied to her email address.
-  var ACCESS_KEY = "e3de9b34-46fa-420b-9190-1c292ec5f7e1";
-  var form = document.getElementById("inq");
-  var result = document.getElementById("result");
-  var status = document.getElementById("status");
-  var note = document.getElementById("fallback-note");
-  var summary = document.getElementById("summary");
-  var copy = document.getElementById("copy");
-  var copied = document.getElementById("copied");
-  var send = document.getElementById("send");
-  function show(title, text, offerCopy) {
-    status.textContent = title; summary.textContent = text;
-    note.style.display = copy.style.display = offerCopy ? "" : "none";
-    result.classList.add("show");
-  }
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    var d = new FormData(form);
-    var name = (d.get("name") || "").toString().trim();
-    var email = (d.get("email") || "").toString().trim();
-    copied.textContent = "";
-    if (!name || !email) { show("Almost there", "Add your name and email so we can reply.", false); return; }
-    var text =
-      "Name: " + name + "\nEmail: " + email + "\nPhone: " + (d.get("phone") || "not given") + "\nLocation: " + (d.get("city") || "not given") + "\n" +
-      "Preference: " + d.get("sex") + "\nPickup: " + d.get("pick") + "\nHome: " + d.get("home") + "\nDog experience: " + d.get("exp") + "\n\n" +
-      (d.get("msg") || "").toString().trim();
-    send.disabled = true; send.textContent = "Sending...";
-    fetch("https://api.web3forms.com/submit", {
-      method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({ access_key: ACCESS_KEY, subject: "Puppy inquiry from " + name, from_name: "7mkennels website", replyto: email, name: name, email: email, message: text })
-    }).then(function (r) { return r.json(); }).then(function (r) {
-      if (!r.success) throw new Error(r.message);
-      form.reset();
-      show("Thank you, " + name + ".", "Your inquiry was sent. Katy will reply to " + email + ".", false);
-    }).catch(function () {
-      show("Your message", "Subject: Puppy inquiry from " + name + "\n\n" + text, true);
-      status.textContent = "We could not send it from here";
-    }).then(function () { send.disabled = false; send.textContent = "Send inquiry"; });
-  });
-  copy.addEventListener("click", function () {
-    var text = summary.textContent;
-    function fallback() {
-      var r = document.createRange(); r.selectNodeContents(summary);
-      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
-      copied.textContent = "Press copy on your keyboard to finish.";
-    }
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).then(function () { copied.textContent = "Copied."; }, fallback);
-    } else { fallback(); }
-  });
-})();
-</script>
-
 </body>
 </html>

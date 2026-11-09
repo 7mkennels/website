@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Send 7mkennels an inquiry about a chocolate Labrador puppy from Bear and Nia. Katy Myers answers every inquiry.">
+<title>Inquire · 7mkennels</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<nav class="top">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="brand-mark" aria-hidden="true">7M</span>7mkennels</a>
+    <ul>
+      <li><a href="/litter/">The litter</a></li>
+      <li><a href="/parents/">Bear and Nia</a></li>
+      <li><a href="/pickup/">Pickup</a></li>
+      <li><a href="/how-it-works/">How it works</a></li>
+      <li><a href="/inquire/" aria-current="page">Inquire</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="wrap">
+  <section class="block first">
+    <div class="section-head">
+      <h1 class="page-title">Send an inquiry</h1>
+      <p>Tell us a little about you. Inquiries are answered by Katy Myers. You can also email <code class="addr">Labs7mkennels@yahoo.com</code>.</p>
+    </div>
+    <form id="inq" novalidate>
+      <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required></div>
+      <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+      <div class="field"><label for="f-city">City and state</label><input id="f-city" name="city" autocomplete="address-level2"></div>
+      <div class="field"><label for="f-sex">Preference</label>
+        <select id="f-sex" name="sex"><option>No preference</option><option>Male</option><option>Female</option></select></div>
+      <div class="field"><label for="f-pick">Pickup location</label>
+        <select id="f-pick" name="pick"><option>Either location</option><option>Atlanta airport</option><option>Off I-85 in Lavonia, GA</option></select></div>
+      <div class="field"><label for="f-home">Your home</label>
+        <select id="f-home" name="home"><option>House with fenced yard</option><option>House, no fence</option><option>Apartment or condo</option><option>Farm or acreage</option></select></div>
+      <div class="field"><label for="f-exp">Dog experience</label>
+        <select id="f-exp" name="exp"><option>First dog</option><option>Have owned dogs before</option><option>Currently own a dog</option><option>Experienced with Labradors</option></select></div>
+      <div class="field full"><label for="f-msg">Tell us about your family</label>
+        <textarea id="f-msg" name="msg"></textarea>
+        <span class="hint">Who lives at home, who will be there during the day, and what you want your Lab to do.</span></div>
+      <div class="field full"><button class="btn" type="submit" id="send">Send inquiry</button></div>
+      <div class="result" id="result" aria-live="polite">
+        <strong id="status">Your message</strong>
+        <p class="hint" id="fallback-note" style="margin-top:4px">Copy it and email it to <code class="addr">Labs7mkennels@yahoo.com</code>.</p>
+        <pre id="summary"></pre>
+        <button class="btn alt" type="button" id="copy">Copy message</button>
+        <span class="hint" id="copied" style="margin-left:10px"></span>
+      </div>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><strong>7mkennels</strong> · Katy Myers · Chocolate Labrador Retrievers · Georgia · <span class="addr">Labs7mkennels@yahoo.com</span></div>
+    <div>Independent breeder. Not affiliated with or endorsed by the American Kennel Club. “AKC” is a registered trademark of the American Kennel Club, Inc.</div>
+  </div>
+</footer>
+<script src="/inquire.js"></script>
+</body>
+</html>
