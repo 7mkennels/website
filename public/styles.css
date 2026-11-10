@@ -38,7 +38,7 @@ a { color: inherit; }
 nav.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line); margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px))); padding-inline: max(16px, env(safe-area-inset-left, 0px)); }
 nav.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 0; flex-wrap: wrap; }
 .brand { font-family: var(--f-display); font-weight: 600; font-size: 1.5rem; text-decoration: none; display: flex; align-items: center; gap: 10px; }
-.brand-mark { width: 30px; height: 30px; border-radius: 50%; background: var(--choc); color: var(--choc-fg); display: grid; place-items: center; font-size: 0.78rem; }
+.brand-mark { width: 48px; height: 48px; border-radius: 50%; display: block; flex: none; }
 nav.top ul { list-style: none; display: flex; gap: 18px; margin: 0; padding: 0; flex-wrap: wrap; font-size: 0.92rem; font-weight: 500; }
 nav.top a { text-decoration: none; color: var(--muted); }
 nav.top a:hover { color: var(--fg); }
