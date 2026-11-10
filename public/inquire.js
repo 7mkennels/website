@@ -22,6 +22,7 @@
     var email = (d.get("email") || "").toString().trim();
     copied.textContent = "";
     if (!name || !email) { show("Almost there", "Add your name and email so we can reply.", false); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { show("Almost there", "Check your email address so we can reply.", false); return; }
     var text =
       "Name: " + name + "\nEmail: " + email + "\nPhone: " + (d.get("phone") || "not given") + "\nLocation: " + (d.get("city") || "not given") + "\n" +
       "Preference: " + d.get("sex") + "\nPickup: " + d.get("pick") + "\nHome: " + d.get("home") + "\nDog experience: " + d.get("exp") + "\n\n" +
@@ -29,7 +30,7 @@
     send.disabled = true; send.textContent = "Sending...";
     fetch("https://api.web3forms.com/submit", {
       method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({ access_key: ACCESS_KEY, subject: "Puppy inquiry from " + name, from_name: "7mkennels website", replyto: email, name: name, email: email, message: text })
+      body: JSON.stringify({ access_key: ACCESS_KEY, subject: "Puppy inquiry from " + name, from_name: "7mkennels website", replyto: email, name: name, email: email, message: text, botcheck: form.botcheck.checked })
     }).then(function (r) { return r.json(); }).then(function (r) {
       if (!r.success) throw new Error(r.message);
       form.reset();
