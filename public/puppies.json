@@ -2,7 +2,7 @@
   "puppies": [
     { "name": "Blue Collar", "sex": "Male", "status": "available", "photo": "images/blue-collar.jpg" },
     { "name": "Green Collar", "sex": "Male", "status": "available", "photo": "images/green-collar.jpg" },
-    { "name": "Light Green Collar", "sex": "Male", "status": "available", "photo": "images/light-green-collar.jpg" },
+    { "name": "Light Blue Collar", "sex": "Female", "status": "available", "photo": "images/light-blue-collar.jpg" },
     { "name": "Red Collar", "sex": "Male", "status": "available", "photo": "images/red-collar.jpg" },
     { "name": "Purple Collar", "sex": "Female", "status": "available", "photo": "images/purple-collar.jpg" },
     { "name": "White Collar", "sex": "Female", "status": "available", "photo": "images/white-collar.jpg" }
