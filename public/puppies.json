@@ -1,6 +1,6 @@
 {
   "puppies": [
-    { "name": "Blue Collar", "sex": "Male", "status": "available", "photo": "images/blue-collar.jpg" },
+    { "name": "Blue Collar", "sex": "Male", "status": "reserved", "photo": "images/blue-collar.jpg" },
     { "name": "Green Collar", "sex": "Male", "status": "available", "photo": "images/green-collar.jpg" },
     { "name": "Orange Collar", "sex": "Male", "status": "available", "photo": "images/orange-collar.jpg" },
     { "name": "Yellow Collar", "sex": "Female", "status": "available", "photo": "images/yellow-collar.jpg" },
